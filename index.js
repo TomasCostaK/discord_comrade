@@ -8,15 +8,31 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
+
+    //Cruz initial meme
   if (msg.content.includes('cruz')) {
     msg.reply('Ele não pode, está a jogar FiveM!');
   }
+
+  //TumTumTum
+  if (msg.content.includes('tumtumtum')) {
+    msg.reply('Oh, tou mesmo a ver que vai ser a mesma merda, vocês nunca marcam nada');
+  }
+
+  //Se a resposta vier do chico ou indiano
+  if(msg.author.tag === 'AceDestiny#3990') {
+    msg.reply('Que chico, vai brincar..');
+  }
+  else if (msg.author.tag === 'AceDestiny#3990') {
+    msg.reply('Cala-te, gualzito');
+  }
+
+  else if (msg.author.tag === 'joaocarvalho#9773') {
+    msg.reply('Tá calado Indiano');
+  }
+
 });
 
-client.on('message', msg => {
-    if (msg.content.includes('tumtumtum')) {
-      msg.reply('Oh, tou mesmo a ver que vai ser a mesma merda, vocês nunca marcam nada');
-    }
-  });
 
+  
 client.login(token);
