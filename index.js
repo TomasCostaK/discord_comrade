@@ -1,13 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-fs = require('fs');
+var fs = require('fs');
 
 const token = 'NzMwMDA2NjMxMDkzMzcwOTYy.XwRaZQ.AZfeMStkn5OUcwvQAM7mfwQj4TI';
 //replace token with hidden file
-function loadInitialToken(){
-  fs.readFile('steamdb/steamdb.csv', function (err, fileData) {
-    console.log(fileData)
-  }
+function loadInitialToken() {
+  fs.readFile('token.txt', 'utf8', function(err, data) {
+    if (err) throw err;
+    console.log(data)
+  });
 }
 
 function makeid(length) {
