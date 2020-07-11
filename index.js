@@ -1,13 +1,16 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var fs = require('fs');
+let token = '';
 
-const token = 'NzMwMDA2NjMxMDkzMzcwOTYy.XwRaZQ.AZfeMStkn5OUcwvQAM7mfwQj4TI';
+loadInitialToken()
+
 //replace token with hidden file
 function loadInitialToken() {
   fs.readFile('token.txt', 'utf8', function(err, data) {
     if (err) throw err;
     console.log(data)
+    token = data
   });
 }
 
@@ -40,7 +43,6 @@ function loadFreeGames() {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  loadInitialToken()
   loadFreeGames()
 });
 
@@ -49,6 +51,10 @@ client.on('message', msg => {
   if (msg.content.includes('--random')) {
     let rep = 'https://prnt.sc/p'+makeid(5);
     msg.reply(rep);
+  }
+
+  if (msg.content.includes('--token')) {
+    msg.reply(token);
   }
 
   //Choose a free game from the ones we've loaded at node start
@@ -65,6 +71,4 @@ client.on('message', msg => {
 
 });
 
-
-  
 client.login(token);
