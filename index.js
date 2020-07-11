@@ -1,18 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 var fs = require('fs');
-let token = '';
-
-loadInitialToken()
-
-//replace token with hidden file
-function loadInitialToken() {
-  fs.readFile('token.txt', 'utf8', function(err, data) {
-    if (err) throw err;
-    console.log(data)
-    token = data
-  });
-}
+const config = require('./config.json');
 
 function makeid(length) {
   var result           = '';
@@ -71,4 +60,4 @@ client.on('message', msg => {
 
 });
 
-client.login(token);
+client.login(config.token)
