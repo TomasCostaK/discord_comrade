@@ -42,10 +42,6 @@ client.on('message', msg => {
     msg.reply(rep);
   }
 
-  if (msg.content.includes('--token')) {
-    msg.reply(token);
-  }
-
   //Choose a free game from the ones we've loaded at node start
   if (msg.content.includes('--free')) {
     var item = arrayFreeGames[Math.floor(Math.random() * arrayFreeGames.length)];
