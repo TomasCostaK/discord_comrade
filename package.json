@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/TomasCostaK/discord_comrade#readme",
   "dependencies": {
+    "csv-parse": "^4.10.1",
     "discord.js": "^12.2.0"
   }
 }
