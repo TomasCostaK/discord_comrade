@@ -51,10 +51,6 @@ client.on('message', msg => {
     msg.reply(rep);
   }
 
-  if (msg.content.toLowerCase().includes('maria rodrigues')) {
-    msg.reply('https://prnt.sc/tdlp5v');
-  }
-
 });
 
 client.login(config.token)
