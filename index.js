@@ -39,6 +39,7 @@ client.on('message', msg => {
     //Cruz initial meme
   if (msg.content.includes('--random')) {
     let rep = 'https://prnt.sc/p'+makeid(5);
+    //rep = 'https://prnt.sc/tld2e5'
     msg.reply(rep);
   }
 
